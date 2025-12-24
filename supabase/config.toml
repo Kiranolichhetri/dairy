@@ -1,0 +1,7 @@
+project_id = "zzhaoyvbvsdlrcxtymot"
+
+[functions.send-order-status-email]
+verify_jwt = false
+
+[functions.esewa-payment]
+verify_jwt = false
