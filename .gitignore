@@ -7,19 +7,31 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-.env
+# Node modules and build output
+node_modules/
+dist/
+build/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# Supabase generated types and temp files
+src/types/supabase.ts
+supabase/.temp/
+
+# Supabase migrations (optional, if you don't want to track them)
+supabase/migrations/
+
+# OS/Editor files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.vscode/
+.idea/
+
+# Cypress test output
+cypress/videos/
+cypress/screenshots/
+
+# Coverage
+coverage/

@@ -1,11 +1,12 @@
 import { useState, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { ProductCard } from '@/components/products/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+// import { categories } from '@/data/products';
 import { useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Badge } from '@/components/ui/badge';
@@ -21,7 +22,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 const Products = () => {
   const { categorySlug } = useParams();
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
 
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(categorySlug || 'all');
