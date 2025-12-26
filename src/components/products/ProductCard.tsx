@@ -50,6 +50,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           variant="ghost"
           size="icon"
           className="absolute top-3 right-3 bg-card/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
+          aria-label={`Add ${product.name} to wishlist`}
           onClick={(e) => {
             e.preventDefault();
           }}
@@ -86,6 +87,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           <Button
             variant="hero"
             size="sm"
+            aria-label={`Add ${product.name} to cart`}
             onClick={() => addToCart(product)}
             disabled={product.stock === 0}
           >
