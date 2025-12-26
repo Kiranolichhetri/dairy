@@ -87,9 +87,9 @@ const Checkout = () => {
       form.action = esewaData.payment_url;
 
       // Get the current URL for callbacks
-      const baseUrl = window.location.origin;
-      const successUrl = `${baseUrl}/esewa/callback`;
-      const failureUrl = `${baseUrl}/esewa/callback`;
+      // Use production callback URLs for eSewa
+      const successUrl = "https://khairawang-dairy.vercel.app/esewa/callback";
+      const failureUrl = "https://khairawang-dairy.vercel.app/esewa/callback";
 
       const formFields = {
         amount: esewaData.amount,
