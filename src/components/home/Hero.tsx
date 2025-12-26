@@ -43,15 +43,12 @@ export function Hero() {
               <span className="text-gradient">Straight from Farm</span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.3 }}
+            <p
               className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0"
             >
               Experience the authentic taste of traditional dairy products from the 
               pristine hills of Uttarakhand. Fresh, nutritious, and delivered to your doorstep.
-            </motion.p>
+            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
