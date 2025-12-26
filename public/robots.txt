@@ -10,7 +10,7 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-
 Sitemap: /sitemap.xml
+Sitemap: https://khairawang-dairy.vercel.app/sitemap.xml
 User-agent: *
 Allow: /
