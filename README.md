@@ -1,90 +1,74 @@
-# React + Vite
+# Khairawang Dairy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Farm Fresh Dairy Products – Modern web app for ordering, tracking, and learning about dairy products.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Product catalog, blog, and order tracking
+- Supabase integration for authentication, data, and admin
+- Email notifications for orders and invoices
+- SEO optimized (robots.txt, sitemap.xml, alt/title attributes)
+- Responsive UI with shadcn-ui and Tailwind CSS
+- Custom favicon matching the site logo
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite
+- TypeScript
+- Supabase
+- shadcn-ui
+- Tailwind CSS
+- Cypress (testing)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+Clone the repository and install dependencies:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd dairy
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Environment Variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file in the root directory and add your Supabase and Google OAuth credentials:
+```
+VITE_SUPABASE_PROJECT_ID=your_project_id
+VITE_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
+VITE_SUPABASE_URL=https://your-project.supabase.co
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REDIRECT_URI=http://localhost:5173/auth/callback/google
+```
 
-**Use GitHub Codespaces**
+## Favicon
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The favicon is a circular gradient Milk icon matching the Navbar logo. You can update `public/favicon.svg` to customize it.
 
-## What technologies are used for this project?
+## Deployment
 
-This project is built with:
+You can deploy for free on Vercel, Netlify, or Cloudflare Pages. These platforms support custom domains (after you register one).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Steps for Vercel/Netlify:
+1. Push your code to GitHub.
+2. Import your repo in Vercel/Netlify.
+3. Set environment variables in the dashboard.
+4. Deploy and connect your custom domain (optional).
 
-## How can I deploy this project?
+## SEO
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- robots.txt and sitemap.xml are included in `public/`.
+- All images and links have descriptive alt/title attributes.
+- Proper heading structure for accessibility and SEO.
 
-## Can I connect a custom domain to my Lovable project?
+## Testing
 
-Yes, you can!
+Run Cypress tests:
+```sh
+npx cypress open
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT
