@@ -52,7 +52,7 @@ You can deploy for free on Vercel, Netlify, or Cloudflare Pages. These platforms
 
 ### Steps for Vercel/Netlify:
 1. Push your code to GitHub.
-2. Import your repo in Vercel/Netlify.
+2. Import your repo into Vercel/Netlify.
 3. Set environment variables in the dashboard.
 4. Deploy and connect your custom domain (optional).
 
