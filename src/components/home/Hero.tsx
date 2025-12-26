@@ -44,9 +44,9 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
               className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0"
             >
               Experience the authentic taste of traditional dairy products from the 

@@ -1,5 +1,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Ensure font-display: swap for Google Fonts */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: local('Outfit'), url('https://fonts.gstatic.com/s/outfit/v10/QGYyz_MVcBeNP4NjuG0.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcCO3H6m3w.ttf') format('truetype');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
