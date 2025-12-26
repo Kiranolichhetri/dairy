@@ -61,7 +61,7 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="hidden md:flex">
+            <Button variant="ghost" size="icon" className="hidden md:flex" aria-label="Search">
               <Search className="w-5 h-5" />
             </Button>
 
@@ -70,6 +70,7 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               className="relative"
+              aria-label="Open cart"
               onClick={() => setCartOpen(true)}
             >
               <ShoppingCart className="w-5 h-5" />
@@ -88,7 +89,7 @@ export function Navbar() {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" aria-label="User menu">
                     <User className="w-5 h-5" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -125,6 +126,7 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               className="md:hidden"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

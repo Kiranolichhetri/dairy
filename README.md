@@ -30,18 +30,6 @@ npm install
 npm run dev
 ```
 
-## Environment Variables
-
-Create a `.env` file in the root directory and add your Supabase and Google OAuth credentials:
-```
-VITE_SUPABASE_PROJECT_ID=your_project_id
-VITE_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
-VITE_SUPABASE_URL=https://your-project.supabase.co
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_REDIRECT_URI=http://localhost:5173/auth/callback/google
-```
-
 ## Favicon
 
 The favicon is a circular gradient Milk icon matching the Navbar logo. You can update `public/favicon.svg` to customize it.
