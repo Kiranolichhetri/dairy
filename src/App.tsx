@@ -22,6 +22,7 @@ const EsewaCallback = lazy(() => import("./pages/EsewaCallback"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const OrderConfirmation = lazy(() => import("./pages/OrderConfirmation"));
+const Orders = lazy(() => import("./pages/Orders"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 
@@ -49,6 +50,7 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/order-tracking" element={<OrderTracking />} />
+                <Route path="/orders" element={<Orders />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/esewa/callback" element={<EsewaCallback />} />
                 <Route path="/order-confirmation" element={<OrderConfirmation />} />
