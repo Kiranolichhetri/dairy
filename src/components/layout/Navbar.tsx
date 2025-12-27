@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SearchModal } from '@/components/SearchModal';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, User, Menu, X, Search, Milk, LogOut, Settings } from 'lucide-react';
@@ -24,6 +25,7 @@ const navLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const { itemCount, setIsOpen: setCartOpen } = useCart();
   const { user, logout, isAdmin } = useAuth();
   const navigate = useNavigate();
@@ -61,9 +63,16 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="hidden md:flex" aria-label="Search">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden md:flex"
+              aria-label="Search"
+              onClick={() => setSearchOpen(true)}
+            >
               <Search className="w-5 h-5" />
             </Button>
+            <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
 
             {/* Cart Button */}
             <Button

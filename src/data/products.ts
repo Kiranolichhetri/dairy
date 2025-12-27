@@ -4,6 +4,7 @@ import type { Product, Category } from '@/types';
 export const products: Product[] = [
   {
     id: '1',
+    slug: 'farm-fresh-full-cream-milk',
     name: 'Farm Fresh Full Cream Milk',
     description: 'Pure, pasteurized full cream milk sourced from grass-fed cows. Rich in calcium and essential nutrients for a healthy start to your day.',
     price: 65,
@@ -20,6 +21,7 @@ export const products: Product[] = [
   },
   {
     id: '2',
+    slug: 'toned-milk',
     name: 'Toned Milk',
     description: 'Light and healthy toned milk with reduced fat content. Perfect for those watching their calorie intake while enjoying dairy goodness.',
     price: 55,
@@ -34,6 +36,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
+    slug: 'fresh-natural-curd',
     name: 'Fresh Natural Curd',
     description: 'Thick and creamy curd made from pure milk using traditional methods. Perfect consistency for everyday consumption.',
     price: 45,
@@ -49,6 +52,7 @@ export const products: Product[] = [
   },
   {
     id: '4',
+    slug: 'greek-yogurt',
     name: 'Greek Yogurt',
     description: 'Extra thick and protein-rich Greek yogurt. Strained to perfection for a luxuriously creamy texture.',
     price: 120,
@@ -64,6 +68,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
+    slug: 'fresh-paneer',
     name: 'Fresh Paneer',
     description: 'Soft and fresh cottage cheese made from pure milk. Ideal for curries, snacks, and healthy recipes.',
     price: 180,
@@ -79,6 +84,7 @@ export const products: Product[] = [
   },
   {
     id: '6',
+    slug: 'malai-paneer',
     name: 'Malai Paneer',
     description: 'Premium quality paneer made with extra cream for an incredibly soft and rich texture.',
     price: 220,
@@ -93,6 +99,7 @@ export const products: Product[] = [
   },
   {
     id: '7',
+    slug: 'pure-desi-ghee',
     name: 'Pure Desi Ghee',
     description: 'Traditional A2 ghee made from cow milk using the bilona method. Rich aroma and golden color.',
     price: 650,
@@ -109,6 +116,7 @@ export const products: Product[] = [
   },
   {
     id: '8',
+    slug: 'fresh-butter',
     name: 'Fresh Butter',
     description: 'Creamy and smooth butter churned from fresh cream. Perfect for spreading and cooking.',
     price: 280,
@@ -123,6 +131,7 @@ export const products: Product[] = [
   },
   {
     id: '9',
+    slug: 'cheddar-cheese',
     name: 'Cheddar Cheese',
     description: 'Aged cheddar cheese with a sharp, tangy flavor. Perfect for sandwiches and cooking.',
     price: 350,
@@ -137,6 +146,7 @@ export const products: Product[] = [
   },
   {
     id: '10',
+    slug: 'mozzarella-cheese',
     name: 'Mozzarella Cheese',
     description: 'Stretchy and mild mozzarella, perfect for pizzas and Italian dishes.',
     price: 300,
@@ -151,6 +161,7 @@ export const products: Product[] = [
   },
   {
     id: '11',
+    slug: 'rasgulla',
     name: 'Rasgulla',
     description: 'Soft, spongy cottage cheese balls soaked in light sugar syrup. A classic Bengali sweet.',
     price: 250,
@@ -165,6 +176,7 @@ export const products: Product[] = [
   },
   {
     id: '12',
+    slug: 'gulab-jamun',
     name: 'Gulab Jamun',
     description: 'Deep-fried milk solid dumplings soaked in rose-flavored sugar syrup.',
     price: 280,

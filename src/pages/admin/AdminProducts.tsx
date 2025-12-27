@@ -56,22 +56,39 @@ export function AdminProducts() {
       setAddForm((prev) => ({ ...prev, category: value }));
     };
 
+    // Utility to generate slug from name
+    function slugify(text: string) {
+      return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/&/g, '-and-')          // Replace & with 'and'
+        .replace(/[\u0300-\u036f]/g, '') // Remove accents
+        .replace(/[^a-z0-9-]/g, '')      // Remove all non-word chars
+        .replace(/--+/g, '-')            // Replace multiple - with single -
+        .replace(/^-+/, '')              // Trim - from start of text
+        .replace(/-+$/, '');             // Trim - from end of text
+    }
+
     const handleAddProduct = async () => {
       setAdding(true);
       const now = new Date().toISOString();
-      const { error, data } = await supabase.from('products').insert([
-        {
-          name: addForm.name,
-          description: addForm.description || 'No description',
-          price: Number(addForm.price),
-          category: addForm.category || 'uncategorized',
-          image: addForm.image || 'https://via.placeholder.com/150',
-          stock: Number(addForm.stock),
-          unit: addForm.unit || 'unit',
-          createdAt: now,
-          updatedAt: now,
-        },
-      ]).select();
+      const slug = slugify(addForm.name);
+      const payload = {
+        name: addForm.name,
+        slug,
+        description: addForm.description || 'No description',
+        price: Number(addForm.price),
+        category: addForm.category || 'uncategorized',
+        image: addForm.image || 'https://via.placeholder.com/150',
+        stock: Number(addForm.stock),
+        unit: addForm.unit || 'unit',
+        createdAt: now,
+        updatedAt: now,
+      };
+      console.log('Add Product Payload:', payload);
+      const { error, data } = await supabase.from('products').insert([payload]).select();
       setAdding(false);
       if (error) {
         toast({ title: 'Error', description: error.message, variant: 'destructive' });

@@ -10,6 +10,7 @@ import { useCart } from "@/contexts/CartContext";
 import { Link } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 import { products } from "@/data/products";
+import { supabase } from '@/integrations/supabase/client';
 import { useOrders, Order, OrderItem } from "@/hooks/useOrders";
 import {
   Dialog,
@@ -116,22 +117,34 @@ const OrderTracking = () => {
     setSearchingOrder(false);
   };
 
-  const handleReorder = (order: Order) => {
+  const handleReorder = async (order: Order) => {
     let itemsAdded = 0;
-    order.items.forEach(item => {
+    for (const item of order.items) {
       if (item.productId) {
-        const product = products.find(p => p.id === item.productId);
+        let product = products.find(p => p.id === item.productId);
+        if (!product) {
+          // Try to fetch from Supabase if not found in static data
+          const { data, error } = await supabase.from('products').select('*').eq('id', item.productId).single();
+          if (!error && data) {
+            product = data;
+          }
+        }
         if (product) {
           addToCart(product, item.quantity);
           itemsAdded++;
         }
       }
-    });
-    
+    }
     if (itemsAdded > 0) {
       toast({
         title: "Items added to cart",
         description: `${itemsAdded} item(s) from your previous order have been added to your cart.`,
+      });
+    } else {
+      toast({
+        title: "No items added",
+        description: `No products from this order are available to reorder.`,
+        variant: "destructive",
       });
     }
   };

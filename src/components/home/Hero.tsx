@@ -47,7 +47,7 @@ export function Hero() {
               className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0"
             >
               Experience the authentic taste of traditional dairy products from the 
-              pristine hills of Uttarakhand. Fresh, nutritious, and delivered to your doorstep.
+              pristine hills of Banke. Fresh, nutritious, and delivered to your doorstep.
             </p>
 
             <motion.div
